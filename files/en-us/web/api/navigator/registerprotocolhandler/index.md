@@ -1,16 +1,11 @@
 ---
-title: Navigator.registerProtocolHandler()
+title: "Navigator: registerProtocolHandler() method"
+short-title: registerProtocolHandler()
 slug: Web/API/Navigator/registerProtocolHandler
-tags:
-  - API
-  - HTML DOM
-  - Method
-  - Navigator
-  - Reference
-  - Web-Based Protocol Handlers
-  - registerProtocolHandler
+page-type: web-api-instance-method
 browser-compat: api.Navigator.registerProtocolHandler
 ---
+
 {{APIRef("HTML DOM")}}{{securecontext_header}}
 
 The **{{domxref("Navigator")}}** method **`registerProtocolHandler()`** lets websites register their ability to open or handle particular URL schemes (aka protocols).
@@ -19,12 +14,9 @@ For example, this API lets webmail sites open `mailto:` URLs, or VoIP sites open
 
 ## Syntax
 
-```js
+```js-nolint
 registerProtocolHandler(scheme, url)
-registerProtocolHandler(scheme, url, title)
 ```
-
-> **Note:** The version with the deprecated `title` argument is recommended for compatibility reasons (see parameter information below).
 
 ### Parameters
 
@@ -40,18 +32,14 @@ registerProtocolHandler(scheme, url, title)
 
     > **Note:** The handler URL must use the `https` scheme. Older browsers also supported `http`.
 
-- `title` {{deprecated_inline}}
+### Return value
 
-  - : A human-readable title string for the handler.
-    **This will be displayed to the user**, such as prompting "Allow this site to handle \[scheme] links?" or listing registered handlers in the browser's settings.
-
-    > **Note:** The title has been removed from the spec due to spoofing concerns.
-    > The `title` should still be set because some browsers **still require it** (see the [compatibility table below](#browser_compatibility)).
-    > Browsers that support the updated spec most likely will be accept but ignore the title.
+None ({{jsxref("undefined")}}).
 
 ### Exceptions
 
-- {{Exception("SecurityError")}}
+- `SecurityError` {{domxref("DOMException")}}
+
   - : The user agent blocked the registration.
     This might happen if:
 
@@ -60,7 +48,7 @@ registerProtocolHandler(scheme, url, title)
     - The browser requires that this function is called from a secure context.
     - The browser requires that the handler's URL be over HTTPS.
 
-- {{Exception("SyntaxError")}}
+- `SyntaxError` {{domxref("DOMException")}}
   - : The `%s` placeholder is missing from the handler URL.
 
 ## Permitted schemes
@@ -71,9 +59,9 @@ A **custom scheme** may be registered as long as:
 
 - The custom scheme's name begins with `web+`
 - The custom scheme's name includes at least 1 letter after the `web+` prefix
-- The custom scheme has only lowercase ASCII letters in its name.
+- The custom scheme has only lowercase {{Glossary("ASCII")}} letters in its name.
 
-For example, `web+burger`, as shown in the [Example](#example) below.
+For example, `web+burger`, as shown in the [Example](#examples) below.
 
 Otherwise, the scheme must be one of the following:
 
@@ -104,14 +92,15 @@ Otherwise, the scheme must be one of the following:
 
 <!-- This must match: https://html.spec.whatwg.org/multipage/system-state.html#safelisted-scheme -->
 
-## Example
+## Examples
 
 If your site is `burgers.example.com`, you can register a protocol handler for it to handle `web+burger:` links, like so:
 
 ```js
-navigator.registerProtocolHandler("web+burger",
-                                  "https://burgers.example.com/?burger=%s",
-                                  "Burger handler"); // last title arg included for compatibility
+navigator.registerProtocolHandler(
+  "web+burger",
+  "https://burgers.example.com/?burger=%s",
+);
 ```
 
 This creates a handler that lets `web+burger:` links send the user to your site, inserting the accessed burger URL into the `%s` placeholder.
@@ -133,4 +122,4 @@ The user will be notified that your code asked to register the protocol handler,
 ## See also
 
 - [Web-based protocol handlers](/en-US/docs/Web/API/Navigator/registerProtocolHandler/Web-based_protocol_handlers)
-- [RegisterProtocolHandler Enhancing the Federated Web](https://blog.mozilla.com/webdev/2010/07/26/registerprotocolhandler-enhancing-the-federated-web/) (Mozilla Webdev)
+- [RegisterProtocolHandler Enhancing the Federated Web](https://blog.mozilla.org/webdev/2010/07/26/registerprotocolhandler-enhancing-the-federated-web/) (Mozilla Webdev)

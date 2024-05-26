@@ -1,15 +1,9 @@
 ---
 title: Cookbook template
 slug: Web/CSS/Layout_cookbook/Contribute_a_recipe/Cookbook_template
-tags:
-  - CSS
-  - Contribute
-  - Guide
-  - Layout
-  - Template
-  - cookbook
-  - recipes
+page-type: guide
 ---
+
 {{CSSRef}}
 
 > **Note:** This is a template page for a CSS Cookbook page. Please use this as a raw template when you create a new cookbook page.
@@ -29,7 +23,7 @@ _Change the path to the example below to point to your merged example. The last 
 
 _Change the link to point to your merged download version._
 
-[Download the example](https://github.com/mdn/css-examples/blob/master/css-cookbook/center--download.html)
+[Download the example](https://github.com/mdn/css-examples/blob/main/css-cookbook/center--download.html)
 
 ## Choices made
 
@@ -42,16 +36,6 @@ _If there are useful alternative methods for building the recipe, or fallback re
 ## Accessibility concerns
 
 _Include this is there are any specific things to watch out for in regard to accessibility. If not relevant for your pattern this can be omitted._
-
-## Browser compatibility
-
-The various layout methods have different browser support. See the charts below for details on basic support for the properties used.
-
-_Include the compat data for key properties you used, as in the example below which includes align-items._
-
-### align-items
-
-{{Compat("css.properties.align-items")}}
 
 ## See also
 

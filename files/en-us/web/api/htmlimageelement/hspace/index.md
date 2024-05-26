@@ -1,44 +1,25 @@
 ---
-title: HTMLImageElement.hspace
+title: "HTMLImageElement: hspace property"
+short-title: hspace
 slug: Web/API/HTMLImageElement/hspace
-tags:
-  - API
-  - HTML
-  - HTML DOM
-  - HTMLImageElement
-  - Horizontal
-  - Image
-  - Layout
-  - Property
-  - Reference
-  - hspace
-  - img
-  - left
-  - margin
-  - right
-  - spacing
-  - Deprecated
+page-type: web-api-instance-property
+status:
+  - deprecated
 browser-compat: api.HTMLImageElement.hspace
 ---
+
 {{APIRef("HTML DOM")}}{{deprecated_header}}
 
 The
-*obsolete* **`hspace`** property of the
+_obsolete_ **`hspace`** property of the
 {{domxref("HTMLImageElement")}} interface specifies the number of pixels of empty
 space to leave empty on the left and right sides of the {{HTMLElement("img")}} element
 when laying out the page.
 
-This property reflects the {{Glossary("HTML")}} {{htmlattrxref("hspace", "img")}}
+This property reflects the {{Glossary("HTML")}} [`hspace`](/en-US/docs/Web/HTML/Element/img#hspace)
 attribute.
 
-## Syntax
-
-```js
-htmlImageElement.hspace = marginWidth;
-marginWidth = htmlImageElement.hspace;
-```
-
-### Value
+## Value
 
 An integer value specifying the width, in pixels, of the horizontal margin to apply to
 the left and right sides of the image.

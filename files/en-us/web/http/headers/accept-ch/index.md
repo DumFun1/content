@@ -1,15 +1,11 @@
 ---
 title: Accept-CH
 slug: Web/HTTP/Headers/Accept-CH
-tags:
-  - Accept-CH
-  - Client hints
-  - HTTP
-  - HTTP Header
-  - Response header
+page-type: http-header
 browser-compat: http.headers.Accept-CH
 ---
-{{HTTPSidebar}}{{securecontext_header}}{{SeeCompatTable}}
+
+{{HTTPSidebar}}{{securecontext_header}}
 
 The **`Accept-CH`** header may be set by a server to specify
 which [client hints](/en-US/docs/Web/HTTP/Client_hints) headers a client
@@ -50,8 +46,7 @@ Accept-CH: Viewport-Width, Width
 Vary: Viewport-Width, Width
 ```
 
-> **Note:** Remember to [vary the response](/en-US/docs/Web/HTTP/Client_hints#varying_client_hints)
-> based on the accepted client hints.
+> **Note:** Remember to [vary the response](/en-US/docs/Web/HTTP/Client_hints#caching_and_client_hints) based on the accepted client hints.
 
 ## Specifications
 

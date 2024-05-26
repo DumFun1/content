@@ -1,19 +1,18 @@
 ---
-title: ImageTrack.selected
+title: "ImageTrack: selected property"
+short-title: selected
 slug: Web/API/ImageTrack/selected
-tags:
-  - API
-  - Property
-  - Reference
-  - selected
-  - ImageTrack
+page-type: web-api-instance-property
+status:
+  - experimental
 browser-compat: api.ImageTrack.selected
 ---
-{{DefaultAPISidebar("WebCodecs API")}}
+
+{{APIRef("WebCodecs API")}}{{SeeCompatTable}}{{AvailableInWorkers("window_and_dedicated")}}
 
 The **`selected`** property of the {{domxref("ImageTrack")}} interface returns `true` if the track is selected for decoding.
 
-### Value
+## Value
 
 A {{jsxref("boolean")}}, if `true` the track is selected for decoding.
 

@@ -1,13 +1,12 @@
 ---
 title: color-profile
 slug: Web/SVG/Attribute/color-profile
-tags:
-  - Deprecated
-  - NeedsExample
-  - SVG
-  - SVG Attribute
-browser-compat: svg.attributes.presentation.color-profile
+page-type: svg-attribute
+status:
+  - deprecated
+browser-compat: svg.global_attributes.color-profile
 ---
+
 {{SVGRef}}{{Deprecated_Header}}
 
 The **`color-profile`** attribute is used to define which color profile a raster image included through the {{SVGElement("image")}} element should use.
@@ -27,7 +26,7 @@ You can use this attribute with the following SVG elements:
       <td>
         <code>auto</code> | <code>sRGB</code> | <code>&#x3C;name></code> |
         <code
-          ><a href="/en-US/docs/Web/SVG/Content_type#IRI">&#x3C;iri></a></code
+          ><a href="/en-US/docs/Web/SVG/Content_type#iri">&#x3C;iri></a></code
         >
       </td>
     </tr>
@@ -53,24 +52,7 @@ You can use this attribute with the following SVG elements:
 
 ## Specifications
 
-<table class="no-markdown">
-  <thead>
-    <tr>
-      <th scope="col">Specification</th>
-      <th scope="col">Status</th>
-      <th scope="col">Comment</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        {{SpecName("SVG1.1", "color.html#ColorProfileProperty", "color-profile")}}
-      </td>
-      <td>{{Spec2("SVG1.1")}}</td>
-      <td>Initial definition</td>
-    </tr>
-  </tbody>
-</table>
+{{Specifications}}
 
 ## Browser compatibility
 

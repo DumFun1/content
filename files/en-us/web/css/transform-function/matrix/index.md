@@ -1,18 +1,16 @@
 ---
 title: matrix()
 slug: Web/CSS/transform-function/matrix
-tags:
-  - CSS
-  - CSS Function
-  - CSS Transforms
-  - Function
-  - Reference
+page-type: css-function
 browser-compat: css.types.transform-function.matrix
 ---
+
 {{CSSRef}}
 
 The **`matrix()`** [CSS](/en-US/docs/Web/CSS) [function](/en-US/docs/Web/CSS/CSS_Functions) defines a homogeneous 2D transformation matrix. Its result is
 a {{cssxref("&lt;transform-function&gt;")}} data type.
+
+{{EmbedInteractiveExample("pages/css/function-matrix.html")}}
 
 > **Note:** `matrix(a, b, c, d, tx, ty)` is a shorthand for
 > `matrix3d(a, b, 0, 0, c, d, 0, 0, 0, 0, 1, 0, tx, ty, 0, 1)`.
@@ -36,10 +34,10 @@ matrix(a, b, c, d, tx, ty)
 <table class="standard-table">
   <thead>
     <tr>
-      <th scope="col">Cartesian coordinates on ℝ^2</th>
-      <th scope="col">Homogeneous coordinates on ℝℙ^2</th>
-      <th scope="col">Cartesian coordinates on ℝ^3</th>
-      <th scope="col">Homogeneous coordinates on ℝℙ^3</th>
+      <th scope="col"><a href="/en-US/docs/Web/CSS/transform-function#cartesian_coordinates">Cartesian coordinates</a> on <a href="https://en.wikipedia.org/wiki/Real_coordinate_space">ℝ^2</a></th>
+      <th scope="col"><a href="https://en.wikipedia.org/wiki/Homogeneous_coordinates">Homogeneous coordinates</a> on <a href="https://en.wikipedia.org/wiki/Real_projective_plane">ℝℙ^2</a></th>
+      <th scope="col">Cartesian coordinates on <a href="https://en.wikipedia.org/wiki/Real_coordinate_space">ℝ^3</a></th>
+      <th scope="col">Homogeneous coordinates on <a href="https://en.wikipedia.org/wiki/Real_projective_space">ℝℙ^3</a></th>
     </tr>
   </thead>
   <tbody>
@@ -122,7 +120,7 @@ matrix(a, b, c, d, tx, ty)
 </table>
 
 The values represent the following functions:
-`matrix( scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY() )`
+`matrix(scaleX(), skewY(), skewX(), scaleY(), translateX(), translateY())`
 
 ## Examples
 
@@ -163,7 +161,10 @@ div {
 ## See also
 
 - {{cssxref("transform")}}
+- Individual transform properties:
+  - {{cssxref("translate")}}
+  - {{cssxref("scale")}}
+  - {{cssxref("rotate")}}
 - {{cssxref("&lt;transform-function&gt;")}}
-- [`matrix3d()`](/en-US/docs/Web/CSS/transform-function/matrix3d())
-- [Understanding the CSS Transforms
-  Matrix](https://dev.opera.com/articles/understanding-the-css-transforms-matrix/)
+- [`matrix3d()`](/en-US/docs/Web/CSS/transform-function/matrix3d)
+- [Understanding the CSS Transforms Matrix](https://dev.opera.com/articles/understanding-the-css-transforms-matrix/)

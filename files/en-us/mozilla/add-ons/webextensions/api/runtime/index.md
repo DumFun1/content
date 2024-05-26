@@ -1,16 +1,10 @@
 ---
 title: runtime
 slug: Mozilla/Add-ons/WebExtensions/API/runtime
-tags:
-  - API
-  - Add-ons
-  - Extensions
-  - Interface
-  - Reference
-  - WebExtensions
-  - runtime
+page-type: webextension-api
 browser-compat: webextensions.api.runtime
 ---
+
 {{AddonSidebar}}
 
 This module provides information about your extension and the environment it's running in.
@@ -37,6 +31,10 @@ It also provides messaging APIs enabling you to:
   - : Result of a call to {{WebExtAPIRef("runtime.requestUpdateCheck()")}}.
 - {{WebExtAPIRef("runtime.OnInstalledReason")}}
   - : The reason that the {{WebExtAPIRef("runtime.onInstalled")}} event is being dispatched.
+- {{WebExtAPIRef("runtime.OnPerformanceWarningCategory")}}
+  - : The category of warning that dispatched the {{WebExtAPIRef("runtime.onPerformanceWarning")}} event.
+- {{WebExtAPIRef("runtime.OnPerformanceWarningSeverity")}}
+  - : The severity of warning that dispatched the {{WebExtAPIRef("runtime.onPerformanceWarning")}} event.
 - {{WebExtAPIRef("runtime.OnRestartRequiredReason")}}
   - : The reason that the {{WebExtAPIRef("runtime.onRestartRequired")}} event is being dispatched.
 
@@ -102,6 +100,8 @@ It also provides messaging APIs enabling you to:
   - : Fired when a message is sent from either an extension process or a content script.
 - {{WebExtAPIRef("runtime.onMessageExternal")}}
   - : Fired when a message is sent from another extension. Cannot be used in a content script.
+- {{WebExtAPIRef("runtime.onPerformanceWarning")}}
+  - : Fired when a runtime performance issue is detected for the extension.
 - {{WebExtAPIRef("runtime.onRestartRequired")}}
   - : Fired when the device needs to be restarted.
 
@@ -111,11 +111,10 @@ It also provides messaging APIs enabling you to:
 
 {{WebExtExamples("h2")}}
 
-> **Note:** This API is based on Chromium's [`chrome.runtime`](https://developer.chrome.com/extensions/runtime) API. This documentation is derived from [`runtime.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/runtime.json) in the Chromium code.
->
-> Microsoft Edge compatibility data is supplied by Microsoft Corporation and is included here under the Creative Commons Attribution 3.0 United States License.
+> **Note:** This API is based on Chromium's [`chrome.runtime`](https://developer.chrome.com/docs/extensions/reference/runtime/) API. This documentation is derived from [`runtime.json`](https://chromium.googlesource.com/chromium/src/+/master/extensions/common/api/runtime.json) in the Chromium code.
 
-<div class="hidden"><pre>// Copyright 2015 The Chromium Authors. All rights reserved.
+<!--
+// Copyright 2015 The Chromium Authors. All rights reserved.
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -142,4 +141,4 @@ It also provides messaging APIs enabling you to:
 // THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-</pre></div>
+-->

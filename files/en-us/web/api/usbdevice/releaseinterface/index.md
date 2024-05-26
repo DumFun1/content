@@ -1,18 +1,14 @@
 ---
-title: USBDevice.releaseInterface()
+title: "USBDevice: releaseInterface() method"
+short-title: releaseInterface()
 slug: Web/API/USBDevice/releaseInterface
-tags:
-  - API
-  - Method
-  - Reference
-  - USB
-  - USBDevice
-  - WebUSB
-  - WebUSB API
-  - releaseInterface
+page-type: web-api-instance-method
+status:
+  - experimental
 browser-compat: api.USBDevice.releaseInterface
 ---
-{{APIRef("WebUSB API")}}{{SeeCompatTable}}
+
+{{APIRef("WebUSB API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
 The **`releaseInterface()`** method of the
 {{domxref("USBDevice")}} interface returns a {{jsxref("promise")}} that resolves when a
@@ -20,13 +16,13 @@ claimed interface is released from exclusive access.
 
 ## Syntax
 
-```js
-var promise = USBDevice.releaseInterface(interfaceNumber)
+```js-nolint
+releaseInterface(interfaceNumber)
 ```
 
 ### Parameters
 
-- interfaceNumber
+- `interfaceNumber`
   - : The device-specific index of the currently-claimed interface.
 
 ### Return value

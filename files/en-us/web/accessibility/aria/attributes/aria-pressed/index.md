@@ -1,14 +1,11 @@
 ---
-title: 'aria-pressed'
+title: aria-pressed
 slug: Web/Accessibility/ARIA/Attributes/aria-pressed
-tags: 
-  - Accessibility
-  - ARIA
-  - ARIA attribute
-  - ARIA property
-  - aria-pressed
-  - Reference
+page-type: aria-attribute
+spec-urls: https://w3c.github.io/aria/#aria-pressed
 ---
+
+{{AccessibilitySidebar}}
 
 The `aria-pressed` attribute indicates the current "pressed" state of a toggle button.
 
@@ -43,12 +40,12 @@ The first rule of ARIA use is "if you can use a native feature with the semantic
 - `undefined` (default)
   - : The element does not support being pressed.
 
-## ARIAMixin API
+## Associated interfaces
 
 - {{domxref("Element.ariaPressed")}}
-  - : The  [`ariaPressed`](/en-US/docs/Web/API/Element/ariaPressed) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-pressed` attribute.
+  - : The [`ariaPressed`](/en-US/docs/Web/API/Element/ariaPressed) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-pressed` attribute.
 - {{domxref("ElementInternals.ariaPressed")}}
-  - : The  [`ariaPressed`](/en-US/docs/Web/API/ElementInternals/ariaPressed) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-pressed` attribute.
+  - : The [`ariaPressed`](/en-US/docs/Web/API/ElementInternals/ariaPressed) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-pressed` attribute.
 
 ## Associated roles
 
@@ -58,19 +55,12 @@ Used in roles:
 
 ## Specifications
 
-| Specification | Status |
-| ------------- | ------  |
-| {{SpecName("ARIA","#aria-pressed","ARIA: aria-pressed Attribute")}}  | {{Spec2('ARIA')}} |
+{{Specifications}}
 
-## See Also
+## See also
 
 - [`<input type="button">`](/en-US/docs/Web/HTML/Element/input/button)
 - [`<input type="submit">`](/en-US/docs/Web/HTML/Element/input/submit)
 - {{HTMLElement('button')}}
 - [`aria-checked`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-checked)
 - [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-selected)
-
-<section id="Quick_links">
-<strong><a href="/en-US/docs/Web/Accessibility/ARIA/Attributes">WAI-ARIA states and properties</a></strong>
-{{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/aria/Attributes")}}
-</section>

@@ -1,17 +1,16 @@
 ---
 title: floor
 slug: Web/XPath/Functions/floor
-tags:
-  - XSLT
-  - XSLT_Reference
+page-type: xpath-function
 ---
-{{ XsltRef() }}
+
+{{XsltSidebar}}
 
 The `floor` function evaluates a decimal number and returns the largest integer less than or equal to the decimal number.
 
 ### Syntax
 
-```
+```plain
 floor( number )
 ```
 
@@ -26,7 +25,7 @@ The nearest integer less than or equal to `number`.
 
 ### Defined
 
-[XPath 1.0 4.4](https://www.w3.org/TR/xpath#function-floor)
+[XPath 1.0 4.4](https://www.w3.org/TR/1999/REC-xpath-19991116/#function-floor)
 
 ### Gecko support
 

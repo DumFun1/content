@@ -1,12 +1,10 @@
 ---
 title: WebGLRenderbuffer
 slug: Web/API/WebGLRenderbuffer
-tags:
-  - API
-  - Reference
-  - WebGL
+page-type: web-api-interface
 browser-compat: api.WebGLRenderbuffer
 ---
+
 {{APIRef("WebGL")}}
 
 The **WebGLRenderbuffer** interface is part of the [WebGL API](/en-US/docs/Web/API/WebGL_API) and represents a buffer that can contain an image, or that can be a source or target of a rendering operation.
@@ -20,16 +18,19 @@ The `WebGLRenderbuffer` object does not define any methods or properties of its 
 - {{domxref("WebGLRenderingContext.bindRenderbuffer()")}}
 - {{domxref("WebGLRenderingContext.createRenderbuffer()")}}
 - {{domxref("WebGLRenderingContext.deleteRenderbuffer()")}}
+- {{domxref("WebGLRenderingContext.framebufferRenderbuffer()")}}
+- {{domxref("WebGLRenderingContext.getRenderbufferParameter()")}}
 - {{domxref("WebGLRenderingContext.isRenderbuffer()")}}
+- {{domxref("WebGLRenderingContext.renderbufferStorage()")}}
 
 ## Examples
 
 ### Creating a render buffer
 
 ```js
-var canvas = document.getElementById('canvas');
-var gl = canvas.getContext('webgl');
-var buffer = gl.createRenderbuffer();
+const canvas = document.getElementById("canvas");
+const gl = canvas.getContext("webgl");
+const buffer = gl.createRenderbuffer();
 ```
 
 ## Specifications
@@ -45,5 +46,8 @@ var buffer = gl.createRenderbuffer();
 - {{domxref("WebGLRenderingContext.bindRenderbuffer()")}}
 - {{domxref("WebGLRenderingContext.createRenderbuffer()")}}
 - {{domxref("WebGLRenderingContext.deleteRenderbuffer()")}}
+- {{domxref("WebGLRenderingContext.framebufferRenderbuffer()")}}
+- {{domxref("WebGLRenderingContext.getRenderbufferParameter()")}}
 - {{domxref("WebGLRenderingContext.isRenderbuffer()")}}
+- {{domxref("WebGLRenderingContext.renderbufferStorage()")}}
 - Other buffers: {{domxref("WebGLBuffer")}}, {{domxref("WebGLFramebuffer")}}

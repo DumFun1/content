@@ -1,11 +1,9 @@
 ---
 title: HTTP conditional requests
 slug: Web/HTTP/Conditional_requests
-tags:
-  - Conditional Requests
-  - Guide
-  - HTTP
+page-type: guide
 ---
+
 {{HTTPSidebar}}
 
 HTTP has a concept of _conditional requests_, where the result, and even the success of a request, can be changed by comparing the affected resources with the value of a _validator_. Such requests can be useful to validate the content of a cache, and sparing a useless control, to verify the integrity of a document, like when resuming a download, or when preventing lost updates when uploading or modifying a document on the server.
@@ -29,7 +27,7 @@ All conditional headers try to check if the resource stored on the server matche
 Comparing versions of the same resource is a bit tricky: depending on the context, there are two kinds of _equality checks_:
 
 - _Strong validation_ is used when byte to byte identity is expected, for example when resuming a download.
-- _Weak validation_ is used when the user-agent only needs to determine if the two resources have the same content. This is even if they are minor differences; like different ads, or a footer with a different date.
+- _Weak validation_ is used when the user-agent only needs to determine if two resources have the same content. The resources may be considered the same even if minor differences exist, such as different ads or a footer with a different date.
 
 The kind of validation is independent of the validator used. Both {{HTTPHeader("Last-Modified")}} and {{HTTPHeader("ETag")}} allow both types of validation, though the complexity to implement it on the server side may vary. HTTP uses strong validation by default, and it specifies when weak validation can be used.
 
@@ -48,9 +46,9 @@ Weak validation differs from strong validation, as it considers two versions of 
 Several HTTP headers, called conditional headers, lead to conditional requests. These are:
 
 - {{HTTPHeader("If-Match")}}
-  - : Succeeds if the {{HTTPHeader("ETag")}} of the distant resource is equal to one listed in this header. By default, unless the etag is prefixed with `'W/'`, it performs a strong validation.
+  - : Succeeds if the {{HTTPHeader("ETag")}} of the distant resource is equal to one listed in this header. It performs a strong validation.
 - {{HTTPHeader("If-None-Match")}}
-  - : Succeeds if the {{HTTPHeader("ETag")}} of the distant resource is different to each listed in this header. By default, unless the etag is prefixed with `'W/'`, it performs a strong validation.
+  - : Succeeds if the {{HTTPHeader("ETag")}} of the distant resource is different to each listed in this header. It performs a weak validation.
 - {{HTTPHeader("If-Modified-Since")}}
   - : Succeeds if the {{HTTPHeader("Last-Modified")}} date of the distant resource is more recent than the one given in this header.
 - {{HTTPHeader("If-Unmodified-Since")}}
@@ -68,13 +66,14 @@ The most common use case for conditional requests is updating a cache. With an e
 
 Together with the resource, the validators are sent in the headers. In this example, both {{HTTPHeader("Last-Modified")}} and {{HTTPHeader("ETag")}} are sent, but it could equally have been only one of them. These validators are cached with the resource (like all headers) and will be used to craft conditional requests, once the cache becomes stale.
 
-As long as the cache is not stale, no requests are issued at all. But once it has become stale, this is mostly controlled by the {{HTTPHeader("Cache-Control")}} header, the client doesn't use the cached value directly but issues a _conditional request_. The value of the validator is used as a parameter of the {{HTTPHeader("If-Modified-Since")}} and {{HTTPHeader("If-Match")}} headers.
+As long as the cache is not stale, no requests are issued at all. But once it has become stale, this is mostly controlled by the {{HTTPHeader("Cache-Control")}} header, the client doesn't use the cached value directly but issues a _conditional request_. The value of the validator is used as a parameter of the {{HTTPHeader("If-Modified-Since")}} and {{HTTPHeader("If-None-Match")}} headers.
 
 If the resource has not changed, the server sends back a {{HTTPStatus("304")}} `Not Modified` response. This makes the cache fresh again, and the client uses the cached resource. Although there is a response/request round-trip that consumes some resources, this is more efficient than to transmit the whole resource over the wire again.
 
 ![With a stale cache, the conditional request is sent. The server can determine if the resource changed, and, as in this case, decide not to send it again as it is the same.](httpcache2.png)
 
-If the resource has changed, the server just sends back a {{HTTPStatus("200", "200 OK")}} response, with the new version of the resource, like if the request wasn't conditional and the client uses this new resource (and caches it).
+If the resource has changed, the server just sends back a {{HTTPStatus("200", "200 OK")}} response, with the new version of the resource (as though the request wasn't conditional).
+The client uses this new resource (and caches it).
 
 ![In the case where the resource was changed, it is sent back as if the request wasn't conditional.](httpcache3.png)
 
@@ -104,7 +103,7 @@ This solution is more efficient, but slightly less flexible, as only one etag ca
 
 ### Avoiding the lost update problem with optimistic locking
 
-A common operation in Web applications is to _update_ a remote document. This is very common in any file system or source control applications, but any application that allows to store remote resources needs such a mechanism. Common Web sites, like wikis and other CMS, have such a need.
+A common operation in Web applications is to _update_ a remote document. This is very common in any file system or source control applications, but any application that allows to store remote resources needs such a mechanism. Common websites, like wikis and other CMS, have such a need.
 
 With the {{HTTPMethod("PUT")}} method you are able to implement this. The client first reads the original files, modifies them, and finally pushes them to the server:
 

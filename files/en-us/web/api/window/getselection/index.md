@@ -1,16 +1,11 @@
 ---
-title: Window.getSelection()
+title: "Window: getSelection() method"
+short-title: getSelection()
 slug: Web/API/Window/getSelection
-tags:
-  - API
-  - HTML DOM
-  - Method
-  - Reference
-  - Selection
-  - Selection API
-  - Window
+page-type: web-api-instance-method
 browser-compat: api.Window.getSelection
 ---
+
 {{ ApiRef() }}
 
 The **`Window.getSelection()`** method returns a
@@ -19,9 +14,13 @@ the current position of the caret.
 
 ## Syntax
 
-```js
-selection = window.getSelection();
+```js-nolint
+getSelection()
 ```
+
+### Parameters
+
+None.
 
 ### Return value
 
@@ -30,7 +29,7 @@ A {{domxref("Selection")}} object.
 When cast to string, either by appending an empty string (`""`) or using
 {{domxref("Selection.toString()")}}, this object returns the text selected.
 
-When called on an {{htmlelement("iframe")}} that is not displayed (eg. where
+When called on an {{htmlelement("iframe")}} that is not displayed (e.g., where
 `display: none` is set) Firefox will return `null`, whereas other
 browsers will return a {{domxref("Selection")}} object with
 {{domxref("Selection.type")}} set to `None`.
@@ -39,10 +38,10 @@ browsers will return a {{domxref("Selection")}} object with
 
 ```js
 function foo() {
-    var selObj = window.getSelection();
-    alert(selObj);
-    var selRange = selObj.getRangeAt(0);
-    // do stuff with the range
+  const selObj = window.getSelection();
+  alert(selObj);
+  const selRange = selObj.getRangeAt(0);
+  // do stuff with the range
 }
 ```
 
@@ -50,11 +49,8 @@ function foo() {
 
 ### String representation of the Selection object
 
-In JavaScript, when an object is passed to a function expecting a string (like {{
-  Domxref("window.alert()") }} or {{ Domxref("document.write()") }}), the object's
-{{jsxref("Object.toString", "toString()")}} method is called and the returned value is
-passed to the function. This can make the object appear to be a string when used with
-other functions when it is really an object with properties and methods.
+In JavaScript, when an object is passed to a function expecting a string (like {{Domxref("window.alert()")}} or {{Domxref("document.write()")}}), the object's {{jsxref("Object.toString", "toString()")}} method is called and the returned value is passed to the function.
+This can make the object appear to be a string when used with other functions when it is really an object with properties and methods.
 
 In the above example, `selObj.toString()` is automatically called when it is
 passed to {{domxref("window.alert()")}}. However, attempting to use a JavaScript [String](/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) property
@@ -68,7 +64,7 @@ have that property or method and may return unexpected results if it does. To us
 directly:
 
 ```js
-var selectedText = selObj.toString();
+const selectedText = selObj.toString();
 ```
 
 - `selObj` is a `Selection` object.
@@ -80,8 +76,8 @@ You can call {{domxref("Document.getSelection()")}}, which works identically to
 `Window.getSelection()`.
 
 It is worth noting that currently `getSelection()` doesn't work on the
-content of {{htmlelement("textarea")}} and {{htmlelement("input")}} elements in Firefox,
-Edge (Legacy) and Internet Explorer. {{domxref("HTMLInputElement.setSelectionRange()")}}
+content of {{htmlelement("textarea")}} and {{htmlelement("input")}} elements in Firefox
+and Edge (Legacy). {{domxref("HTMLInputElement.setSelectionRange()")}}
 or the `selectionStart` and `selectionEnd` properties could be
 used to work around this.
 

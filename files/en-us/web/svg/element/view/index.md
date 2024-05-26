@@ -1,13 +1,10 @@
 ---
 title: <view>
 slug: Web/SVG/Element/view
-tags:
-  - Element
-  - NeedsExample
-  - Reference
-  - SVG
+page-type: svg-element
 browser-compat: svg.elements.view
 ---
+
 {{SVGRef}}
 
 A view is a defined way to view the image, like a zoom level or a detail view.
@@ -18,18 +15,9 @@ A view is a defined way to view the image, like a zoom level or a detail view.
 
 ## Attributes
 
-### Global attributes
-
-- [Aria attributes](/en-US/docs/Web/SVG/Attribute#aria_attributes)
-- [Core attributes](/en-US/docs/Web/SVG/Attribute#core_attributes)
-- [Global event attributes](/en-US/docs/Web/SVG/Attribute#global_event_attributes)
-
-### Specific attributes
-
 - {{SVGAttr("viewBox")}}
 - {{SVGAttr("preserveAspectRatio")}}
-- {{SVGAttr("zoomAndPan")}}
-- {{SVGAttr("viewTarget")}}
+- {{SVGAttr("zoomAndPan")}} {{Deprecated_Inline}} {{Non-standard_Inline}}
 
 ## Example
 

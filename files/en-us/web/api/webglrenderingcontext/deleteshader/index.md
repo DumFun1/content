@@ -1,14 +1,11 @@
 ---
-title: WebGLRenderingContext.deleteShader()
+title: "WebGLRenderingContext: deleteShader() method"
+short-title: deleteShader()
 slug: Web/API/WebGLRenderingContext/deleteShader
-tags:
-  - API
-  - Method
-  - Reference
-  - WebGL
-  - WebGLRenderingContext
+page-type: web-api-instance-method
 browser-compat: api.WebGLRenderingContext.deleteShader
 ---
+
 {{APIRef("WebGL")}}
 
 The **`WebGLRenderingContext.deleteShader()`** method of the [WebGL API](/en-US/docs/Web/API/WebGL_API) marks a given
@@ -19,18 +16,18 @@ is destroyed by the garbage collector.
 
 ## Syntax
 
-```js
-void gl.deleteShader(shader);
+```js-nolint
+deleteShader(shader)
 ```
 
 ### Parameters
 
-- shader
+- `shader`
   - : A {{domxref("WebGLShader")}} object to delete.
 
 ### Return value
 
-None.
+None ({{jsxref("undefined")}}).
 
 ## Examples
 

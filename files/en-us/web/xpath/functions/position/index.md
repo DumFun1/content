@@ -1,17 +1,16 @@
 ---
 title: position
 slug: Web/XPath/Functions/position
-tags:
-  - XSLT
-  - XSLT_Reference
+page-type: xpath-function
 ---
-{{ XsltRef() }}
+
+{{XsltSidebar}}
 
 The `position` function returns a number equal to the context position from the expression evaluation context.
 
 ### Syntax
 
-```
+```plain
 position()
 ```
 
@@ -41,7 +40,7 @@ An integer equal to the context position from the expression evaluation context.
 
 ### Defined
 
-[XPath 1.0 4.1](https://www.w3.org/TR/xpath#function-position)
+[XPath 1.0 4.1](https://www.w3.org/TR/1999/REC-xpath-19991116/#function-position)
 
 ### Gecko support
 

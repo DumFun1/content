@@ -1,17 +1,16 @@
 ---
 title: current
 slug: Web/XPath/Functions/current
-tags:
-  - XSLT
-  - XSLT_Reference
+page-type: xpath-function
 ---
-{{ XsltRef() }}
+
+{{XsltSidebar}}
 
 The `current` function can be used to get the context node in an XSLT instruction.
 
 ### Syntax
 
-```
+```plain
 current()
 ```
 
@@ -37,7 +36,7 @@ In an inner expression (e.g. in square brackets), the current node is still the 
 
 ```xml
 <xsl:value-of select="current()"/>
-  ```
+```
 
 ```xml
 <xsl:value-of select="foo/bar[current() = X]"/>
@@ -65,7 +64,7 @@ the `.` returns the `bar` node, which may be different from the current node.
 
 ### Defined
 
-[XSLT 1.0 12.4](https://www.w3.org/TR/xslt#function-current)
+[XSLT 1.0 12.4](https://www.w3.org/TR/1999/REC-xslt-19991116/#function-current)
 
 ### Gecko support
 

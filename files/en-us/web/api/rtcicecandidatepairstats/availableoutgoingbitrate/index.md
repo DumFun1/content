@@ -1,25 +1,11 @@
 ---
-title: RTCIceCandidatePairStats.availableOutgoingBitrate
+title: "RTCIceCandidatePairStats: availableOutgoingBitrate property"
+short-title: availableOutgoingBitrate
 slug: Web/API/RTCIceCandidatePairStats/availableOutgoingBitrate
-tags:
-  - API
-  - Bandwidth
-  - Bit Rate
-  - Bitrate
-  - Candidate
-  - Connection
-  - ICE
-  - Network
-  - Pair
-  - Property
-  - RTCIceCandidatePairStats
-  - Reference
-  - Statistics
-  - Stats
-  - WebRTC
-  - WebRTC API
-browser-compat: api.RTCIceCandidatePairStats.availableOutgoingBitrate
+page-type: web-api-instance-property
+browser-compat: api.RTCStatsReport.type_candidate-pair.availableOutgoingBitrate
 ---
+
 {{APIRef("WebRTC")}}
 
 The {{domxref("RTCIceCandidatePairStats")}} property
@@ -29,16 +15,9 @@ pair. The higher the value, the more bandwidth you can assume is available for
 outgoing data.
 
 You can get the incoming available bitrate from
-{{domxref("RTCIceCandidatePairStats.availableIncomingBitrate",
-  "availableIncomingBitrate")}}.
+{{domxref("RTCIceCandidatePairStats.availableIncomingBitrate", "availableIncomingBitrate")}}.
 
-## Syntax
-
-```js
-availableOutgoingBitrate = rtcIceCandidatePairStats.availableOutgoingBitrate;
-```
-
-### Value
+## Value
 
 A floating-point value which approximates the amount of available bandwidth for
 outgoing data on the network connection described by the
@@ -59,7 +38,7 @@ including IP, UDP, or TCP.
 
 > **Note:** The returned value is computed using a method similar—but not
 > identical—to the Transport Independent Application Specific Maximum (TIAS) described
-> in {{RFC(3890, "6.2")}}.
+> in {{RFC(3890, "", "6.2")}}.
 
 ## Specifications
 

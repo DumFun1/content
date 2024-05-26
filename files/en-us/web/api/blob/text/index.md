@@ -1,36 +1,36 @@
 ---
-title: Blob.text()
+title: "Blob: text() method"
+short-title: text()
 slug: Web/API/Blob/text
-tags:
-  - API
-  - Blob
-  - File API
-  - Method
-  - Reference
+page-type: web-api-instance-method
 browser-compat: api.Blob.text
 ---
-{{APIRef("File API")}}
 
-The **`text()`** method in the
+{{APIRef("File API")}}{{AvailableInWorkers}}
+
+The **`text()`** method of the
 {{domxref("Blob")}} interface returns a {{jsxref("Promise")}} that resolves with a
 string containing the contents of the blob, interpreted as UTF-8.
 
 ## Syntax
 
-```js
-text();
+```js-nolint
+text()
 ```
+
+### Parameters
+
+None.
 
 ### Return value
 
-A promise that resolves with a {{domxref("USVString")}} which contains the blob's data
+A promise that resolves with a string which contains the blob's data
 as a text string. The data is _always_ presumed to be in UTF-8 format.
 
 ## Usage notes
 
-The {{domxref("FileReader")}} method {{domxref("FileReader.readAsText",
-  "readAsText()")}} is an older method that performs a similar function. It works on both
-`Blob` and {{domxref("File")}} objects. There are two key differences:
+The {{domxref("FileReader")}} method {{domxref("FileReader.readAsText", "readAsText()")}} is an older method that performs a similar function.
+It works on both `Blob` and {{domxref("File")}} objects. There are two key differences:
 
 - `Blob.text()` returns a promise, whereas
   `FileReader.readAsText()` is an event based API.

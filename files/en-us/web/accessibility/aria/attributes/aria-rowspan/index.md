@@ -1,14 +1,11 @@
 ---
-title: 'aria-rowspan'
+title: aria-rowspan
 slug: Web/Accessibility/ARIA/Attributes/aria-rowspan
-tags: 
-  - Accessibility
-  - ARIA
-  - ARIA attribute
-  - ARIA property
-  - aria-rowspan
-  - Reference
+page-type: aria-attribute
+spec-urls: https://w3c.github.io/aria/#aria-rowspan
 ---
+
+{{AccessibilitySidebar}}
 
 The `aria-rowspan` attribute defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.
 
@@ -27,12 +24,12 @@ The value of `aria-rowspan` is an integer greater than or equal to 0 and less th
 - `<integer>`
   - : An integer greater than or equal to `0` and less than would cause a cell to overlap the next cell in the same column.
 
-## ARIAMixin API
+## Associated interfaces
 
 - {{domxref("Element.ariaRowSpan")}}
-  - : The  [`ariaRowSpan`](/en-US/docs/Web/API/Element/ariaRowSpan) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-rowspan` attribute.
+  - : The [`ariaRowSpan`](/en-US/docs/Web/API/Element/ariaRowSpan) property, part of the {{domxref("Element")}} interface, reflects the value of the `aria-rowspan` attribute.
 - {{domxref("ElementInternals.ariaRowSpan")}}
-  - : The  [`ariaRowSpan`](/en-US/docs/Web/API/ElementInternals/ariaRowSpan) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-rowspan` attribute.
+  - : The [`ariaRowSpan`](/en-US/docs/Web/API/ElementInternals/ariaRowSpan) property, part of the {{domxref("ElementInternals")}} interface, reflects the value of the `aria-rowspan` attribute.
 
 ## Associated roles
 
@@ -47,17 +44,10 @@ Inherited into roles:
 
 ## Specifications
 
-| Specification | Status |
-| ------------- | ------  |
-| {{SpecName("ARIA","#aria-rowspan","ARIA: aria-rowspan Attribute")}}  | {{Spec2('ARIA')}} |
+{{Specifications}}
 
-## See Also
+## See also
 
-- The [`rowspan`](/en-US/docs/Web/HTML/Element/td#attr-rowspan) attribute on {{HTMLElement('td')}}
-- [`aria-rowindex`](/en-US/docs/Web/Accessibility/aria/Attributes/aria-rowindex)
-- [`aria-colspan`](/en-US/docs/Web/Accessibility/aria/Attributes/aria-colspan)
-
-<section id="Quick_links">
-<strong><a href="/en-US/docs/Web/Accessibility/ARIA/Attributes">WAI-ARIA states and properties</a></strong>
-{{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/aria/Attributes")}}
-</section>
+- The [`rowspan`](/en-US/docs/Web/HTML/Element/td#rowspan) attribute on {{HTMLElement('td')}}
+- [`aria-rowindex`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-rowindex)
+- [`aria-colspan`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-colspan)

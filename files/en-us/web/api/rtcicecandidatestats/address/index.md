@@ -1,24 +1,11 @@
 ---
-title: RTCIceCandidateStats.address
+title: "RTCIceCandidateStats: address property"
+short-title: address
 slug: Web/API/RTCIceCandidateStats/address
-tags:
-  - API
-  - Address
-  - Domain
-  - Domain Name
-  - FQDN
-  - IP
-  - IPv4
-  - IPv6
-  - Property
-  - RTCIceCandidateStats
-  - Reference
-  - Statistics
-  - Stats
-  - WebRTC
-  - WebRTC API
-browser-compat: api.RTCIceCandidateStats.address
+page-type: web-api-instance-property
+browser-compat: api.RTCStatsReport.type_local-candidate.address
 ---
+
 {{APIRef("WebRTC")}}
 
 The **`address`** property of the
@@ -30,13 +17,7 @@ well.
 When a domain name is specified, the first IP address selected for that
 address is used, even if the domain name maps to multiple IP addresses.
 
-## Syntax
-
-```js
-candidateAddress = rtcIceCandidateStats.address;
-```
-
-### Value
+## Value
 
 Either an IPv4 or IPv6 address or a fully-qualified domain name, which corresponds to
 the candidate.

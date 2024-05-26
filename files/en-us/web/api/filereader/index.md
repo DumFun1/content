@@ -1,38 +1,32 @@
 ---
 title: FileReader
 slug: Web/API/FileReader
-tags:
-  - API
-  - File API
-  - Files
-  - Interface
-  - Reference
+page-type: web-api-interface
 browser-compat: api.FileReader
 ---
-{{APIRef("File API")}}
 
-The **`FileReader`** object lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using {{domxref("File")}} or {{domxref("Blob")}} objects to specify the file or data to read.
+{{APIRef("File API")}}{{AvailableInWorkers}}
 
-File objects may be obtained from a {{domxref("FileList")}} object returned as a result of a user selecting files using the {{HTMLElement("input")}} element, from a drag and drop operation's {{domxref("DataTransfer")}} object, or from the `mozGetAsFile()` API on an {{domxref("HTMLCanvasElement")}}.
+The **`FileReader`** interface lets web applications asynchronously read the contents of files (or raw data buffers) stored on the user's computer, using {{domxref("File")}} or {{domxref("Blob")}} objects to specify the file or data to read.
 
-`FileReader` can only access the contents of files that the user has explicitly selected, either using an HTML `<input type="file">` element or by drag and drop. It cannot be used to read a file by pathname from the user's file system. To read files on the client's file system by pathname, use the [File System Access API](/en-US/docs/Web/API/File_System_Access_API). To read server-side files, use standard Ajax solutions, with CORS permission if reading cross-domain.
+File objects may be obtained from a {{domxref("FileList")}} object returned as a result of a user selecting files using the {{HTMLElement("input")}} element, or from a drag and drop operation's {{domxref("DataTransfer")}} object.
 
-{{AvailableInWorkers}}
+`FileReader` can only access the contents of files that the user has explicitly selected, either using an HTML `<input type="file">` element or by drag and drop. It cannot be used to read a file by pathname from the user's file system. To read files on the client's file system by pathname, use the [File System Access API](/en-US/docs/Web/API/File_System_API). To read server-side files, use {{domxref("fetch()")}}, with [CORS](/en-US/docs/Web/HTTP/CORS) permission if reading cross-origin.
 
 {{InheritanceDiagram}}
 
 ## Constructor
 
 - {{domxref("FileReader.FileReader", "FileReader()")}}
-  - : Returns a newly constructed `FileReader`.
+  - : Returns a new `FileReader` object.
 
-See [Using files from web applications](/en-US/docs/Web/API/File/Using_files_from_web_applications) for details and examples.
+See [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications) for details and examples.
 
-## Properties
+## Instance properties
 
-- {{domxref("FileReader.error")}} {{readonlyinline}}
+- {{domxref("FileReader.error")}} {{ReadOnlyInline}}
   - : A {{domxref("DOMException")}} representing the error that occurred while reading the file.
-- {{domxref("FileReader.readyState")}} {{readonlyinline}}
+- {{domxref("FileReader.readyState")}} {{ReadOnlyInline}}
 
   - : A number indicating the state of the `FileReader`. This is one of the following:
 
@@ -42,16 +36,16 @@ See [Using files from web applications](/en-US/docs/Web/API/File/Using_files_fro
     | `LOADING` | `1`   | Data is currently being loaded.             |
     | `DONE`    | `2`   | The entire read request has been completed. |
 
-- {{domxref("FileReader.result")}} {{readonlyinline}}
+- {{domxref("FileReader.result")}} {{ReadOnlyInline}}
   - : The file's contents. This property is only valid after the read operation is complete, and the format of the data depends on which of the methods was used to initiate the read operation.
 
-## Methods
+## Instance methods
 
 - {{domxref("FileReader.abort()")}}
   - : Aborts the read operation. Upon return, the `readyState` will be `DONE`.
 - {{domxref("FileReader.readAsArrayBuffer()")}}
   - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains an {{jsxref("ArrayBuffer")}} representing the file's data.
-- {{domxref("FileReader.readAsBinaryString()")}}
+- {{domxref("FileReader.readAsBinaryString()")}} {{deprecated_inline}}
   - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains the raw binary data from the file as a string.
 - {{domxref("FileReader.readAsDataURL()")}}
   - : Starts reading the contents of the specified {{domxref("Blob")}}, once finished, the `result` attribute contains a `data:` URL representing the file's data.
@@ -60,7 +54,7 @@ See [Using files from web applications](/en-US/docs/Web/API/File/Using_files_fro
 
 ## Events
 
-Listen to these events using {{domxref("EventTarget/addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface.
+Listen to these events using {{domxref("EventTarget/addEventListener", "addEventListener()")}} or by assigning an event listener to the `oneventname` property of this interface. Remove the event listeners with {{domxref("EventTarget.removeEventListener", "removeEventListener()")}}, once `FileReader` is no longer used, to avoid memory leaks.
 
 - {{domxref("FileReader/abort_event", "abort")}}
   - : Fired when a read has been aborted, for example because the program called {{domxref("FileReader.abort()")}}.
@@ -85,7 +79,7 @@ Listen to these events using {{domxref("EventTarget/addEventListener", "addEvent
 
 ## See also
 
-- [Using files from web applications](/en-US/docs/Web/API/File/Using_files_from_web_applications)
+- [Using files from web applications](/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
 - {{domxref("File")}}
 - {{domxref("Blob")}}
 - {{domxref("FileReaderSync")}}

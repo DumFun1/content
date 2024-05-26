@@ -1,18 +1,14 @@
 ---
 title: nop
 slug: WebAssembly/Reference/Control_flow/nop
-tags:
-  - WebAssembly
-  - wasm
-  - Landing page
-  - Reference
-  - Control flow
+page-type: webassembly-instruction
 ---
+
 {{WebAssemblySidebar}}
 
 **`nop`** stands for no-operation. It literally does nothing.
 
-{{EmbedInteractiveExample("pages/wat/nop.html")}}
+{{EmbedInteractiveExample("pages/wat/nop.html", "tabbed-shorter")}}
 
 ## Syntax
 

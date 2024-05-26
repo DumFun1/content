@@ -1,28 +1,20 @@
 ---
-title: MediaKeySession.keyStatuses
+title: "MediaKeySession: keyStatuses property"
+short-title: keyStatuses
 slug: Web/API/MediaKeySession/keyStatuses
-tags:
-  - API
-  - EncryptedMediaExtensions
-  - Experimental
-  - MediaKeySession
-  - NeedsExample
-  - Property
-  - Reference
-  - keyStatuses
+page-type: web-api-instance-property
 browser-compat: api.MediaKeySession.keyStatuses
 ---
-{{APIRef("EncryptedMediaExtensions")}}
+
+{{APIRef("EncryptedMediaExtensions")}}{{SecureContext_Header}}
 
 The **`MediaKeySession.keyStatuses`** read-only property
 returns a reference to a read-only {{domxref('MediaKeyStatusMap')}} of the current
 session's keys and their statuses.
 
-## Syntax
+## Value
 
-```js
-var mediaKeyStatusMapObj = mediaKeySessionObj.keyStatuses;
-```
+A {{domxref('MediaKeyStatusMap')}}.
 
 ## Specifications
 

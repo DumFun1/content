@@ -1,33 +1,19 @@
 ---
-title: XRRigidTransform.matrix
+title: "XRRigidTransform: matrix property"
+short-title: matrix
 slug: Web/API/XRRigidTransform/matrix
-tags:
-  - API
-  - AR
-  - Property
-  - Read-only
-  - Reality
-  - Reference
-  - VR
-  - Virtual
-  - WebXR
-  - WebXR API
-  - WebXR Device API
-  - XR
-  - XRRigidTransform
-  - augmented
-  - matrix
-  - transform
+page-type: web-api-instance-property
 browser-compat: api.XRRigidTransform.matrix
 ---
-{{APIRef("WebXR Device API")}}
+
+{{APIRef("WebXR Device API")}}{{SecureContext_Header}}
 
 The read-only {{domxref("XRRigidTransform")}} property
 **`matrix`** returns the transform
 matrix represented by the object. The returned matrix can then be premultiplied with a
 column vector to rotate the
-vector by the 3D rotation specified by the {{domxref("XRRigidTransform.orientation",
-  "orientation")}}, then translate
+vector by the 3D rotation specified by the
+{{domxref("XRRigidTransform.orientation", "orientation")}}, then translate
 it by the {{domxref("XRRigidTransform.position", "position")}}.
 
 ## Value
@@ -35,8 +21,7 @@ it by the {{domxref("XRRigidTransform.position", "position")}}.
 A {{jsxref("Float32Array")}} containing 16 entries which represents the 4x4 transform
 matrix which is described by
 the {{domxref("XRRigidTransform.position", "position")}} and
-{{domxref("XRRigidTransform.orientation",
-  "orientation")}} properties.
+{{domxref("XRRigidTransform.orientation", "orientation")}} properties.
 
 ## Usage notes
 
@@ -47,7 +32,7 @@ All 4x4 transform matrices used in WebGL are stored in 16-element
 into the array in column-major order; that is, each column is written into the array
 top-down before moving to the
 right one column and writing the next column into the array. Thus, for an array \[a0, a1,
-a2, ..., a13, a14, a15], the
+a2, …, a13, a14, a15], the
 matrix looks like this:
 
 <math display="block"><semantics><mrow><mo>[</mo>
@@ -416,8 +401,9 @@ to position and orient it.
 
 ```js
 let transform = new XRRigidTransform(
-                      {x: 0, y: 0.5, z: 0.5},
-                      {x: 0, y: -0.5, z: -0.5, w: 1});
+  { x: 0, y: 0.5, z: 0.5 },
+  { x: 0, y: -0.5, z: -0.5, w: 1 },
+);
 drawGLObject("magic-lamp", transform.matrix);
 ```
 

@@ -1,18 +1,14 @@
 ---
-title: PerformanceNavigation.type
+title: "PerformanceNavigation: type property"
+short-title: type
 slug: Web/API/PerformanceNavigation/type
-tags:
-  - API
-  - Backwards compatibility
-  - Deprecated
-  - Navigation Timing
-  - PerformanceNavigation
-  - Property
-  - Read-only
-  - legacy
+page-type: web-api-instance-property
+status:
+  - deprecated
 browser-compat: api.PerformanceNavigation.type
 ---
-{{APIRef("Navigation Timing")}}{{Deprecated_Header}}
+
+{{APIRef("Performance API")}}{{Deprecated_Header}}
 
 The legacy
 **`PerformanceNavigation.type`**
@@ -21,6 +17,10 @@ describing how the navigation to this page was done.
 
 > **Warning:** This interface of this property is deprecated in the [Navigation Timing Level 2 specification](https://w3c.github.io/navigation-timing/#obsolete).
 > Please use the {{domxref("PerformanceNavigationTiming")}} interface instead.
+
+## Value
+
+An `unsigned short`.
 
 Possible values are:
 
@@ -62,11 +62,7 @@ Possible values are:
   </tbody>
 </table>
 
-## Syntax
-
-```js
-type = performanceNavigation.type;
-```
+> **Note:** Historically, developers tested for a `type` of "`TYPE_BACK_FORWARD`" to get an indication of back/forward cache ({{glossary("bfcache")}}) hit rate. This however did not provide any reasons for bfcache blocking, or any other data. The {{domxref("PerformanceNavigationTiming.notRestoredReasons")}} property should be used to monitor the bfcache, going forward. See [Monitoring bfcache blocking reasons](/en-US/docs/Web/API/Performance_API/Monitoring_bfcache_blocking_reasons) for more information.
 
 ## Specifications
 

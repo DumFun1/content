@@ -1,16 +1,11 @@
 ---
-title: 'ARIA: tablist role'
+title: "ARIA: tablist role"
 slug: Web/Accessibility/ARIA/Roles/tablist_role
-tags: 
-  - Accessibility
-  - ARIA
-  - roles
-  - Reference
-  - ARIA roles
-  - tablist role
-  - composite widget role
-  - tablist
+page-type: aria-role
+spec-urls: https://w3c.github.io/aria/#tablist
 ---
+
+{{AccessibilitySidebar}}
 
 The `tablist` role identifies the element that serves as the container for a set of `tabs`. The tab content are referred to as `tabpanel` elements.
 
@@ -30,9 +25,9 @@ For a single-selectable tablist, the non-active tabpanel elements should be hidd
 
 When creating a multi-selectable tablist, include [`aria-multiselectable="true"`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-multiselectable) on the `tablist element`.
 
-The `tab` elements not the `tablist`, have the [`aria-expanded`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded) attribute. Set to `aria-expanded="true"` for the tabs associated with each visible tabpanel. The tabs associated with hidden tabpanel elements have their `aria-expanded` attributes set to `false`.
+The `tab` elements not the `tablist`, have the [`aria-selected`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-selected) attribute. Set to `aria-selected="true"` for the tabs associated with each visible tabpanel. The tabs associated with hidden tabpanel elements have their `aria-selected` attributes set to `false`.
 
-If the tab list has a visible label, set [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) to the `id` of the labelling element. If now, use [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) to provide a label.
+If the tab list has a visible label, set [`aria-labelledby`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) to the `id` of the labelling element. If not, use [`aria-label`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) to provide a label.
 
 To be keyboard accessible, focus must be managed for the descendants of this role.
 
@@ -45,7 +40,7 @@ Elements with the `tablist` role have an implicit [`aria-orientation`](/en-US/do
 - [`aria-multiselectable`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-multiselectable)
   - : When set to `true`, indicates the user may select more than one `tab` from the `tablist` descendants.
 - [`aria-orientation`](/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-orientation)
-  - :  If the tablist element is vertically oriented, set `aria-orientation="vertical". The default is`horizontal`.
+  - : If the tablist element is vertically oriented, set `aria-orientation="vertical"`. The default is `horizontal`.
 
 ### Keyboard interactions
 
@@ -86,30 +81,22 @@ When focus is on a tab in a tablist with either horizontal or vertical orientati
 <!--
 ### Required JavaScript features
 
-## Examples
-
-## Accessibility Concerns
+## Accessibility concerns
 
 ## Best Practices
 
 ### Prefer HTML
 -->
 
+## Examples
+
+See the [`tabpanel`, `tab`, and `tablist` example](/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role#example) in the [`tab`](/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role) role definition.
+
 ## Specifications
 
-| Specification                                                                                                                    | Status                                           |
-| -------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| {{SpecName("ARIA","#tablist","ARIA: tablist role")}}                                             | {{Spec2('ARIA')}}                         |
+{{Specifications}}
 
-## See Also
+## See also
 
 - [`tab` role](/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role)
 - [`tabpanel` role](/en-US/docs/Web/Accessibility/ARIA/Roles/tabpanel_role)
-
-<section id="Quick_links">
-
-1. [**WAI-ARIA roles**](/en-US/docs/Web/Accessibility/ARIA/Roles)
-
-    {{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/ARIA/Roles")}}
-
-</section>

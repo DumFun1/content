@@ -1,25 +1,14 @@
 ---
-title: BaseAudioContext.createIIRFilter()
+title: "BaseAudioContext: createIIRFilter() method"
+short-title: createIIRFilter()
 slug: Web/API/BaseAudioContext/createIIRFilter
-tags:
-  - API
-  - Audio
-  - AudioContext
-  - BaseAudioContext
-  - CreateIIRFilter
-  - Method
-  - Reference
-  - Web Audio API
-  - filter
+page-type: web-api-instance-method
 browser-compat: api.BaseAudioContext.createIIRFilter
 ---
+
 {{ APIRef("Web Audio API") }}
 
-The **`createIIRFilter()`** method of the {{
-  domxref("BaseAudioContext") }} interface creates an {{ domxref("IIRFilterNode") }},
-which represents a general **{{interwiki("wikipedia", "infinite impulse
-    response")}}** (IIR) filter which can be configured to serve as various types
-of filter.
+The **`createIIRFilter()`** method of the {{domxref("BaseAudioContext")}} interface creates an {{ domxref("IIRFilterNode") }}, which represents a general **[infinite impulse response](https://en.wikipedia.org/wiki/Infinite_impulse_response)** (IIR) filter which can be configured to serve as various types of filter.
 
 > **Note:** The {{domxref("IIRFilterNode.IIRFilterNode", "IIRFilterNode()")}}
 > constructor is the recommended way to create a {{domxref("IIRFilterNode")}}; see
@@ -27,8 +16,8 @@ of filter.
 
 ## Syntax
 
-```js
-var iirFilter = AudioContext.createIIRFilter(feedforward, feedback);
+```js-nolint
+createIIRFilter(feedforward, feedback)
 ```
 
 ### Parameters

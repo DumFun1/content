@@ -1,24 +1,18 @@
 ---
 title: NavigationPreloadManager
 slug: Web/API/NavigationPreloadManager
-tags:
-  - API
-  - Interface
-  - Navigation
-  - NavigationPreloadManager
-  - Offline
-  - Reference
-  - Service Workers
+page-type: web-api-interface
 browser-compat: api.NavigationPreloadManager
 ---
-{{APIRef("Service Workers API")}}{{SeeCompatTable}}
+
+{{APIRef("Service Workers API")}}{{SecureContext_Header}}
 
 The **`NavigationPreloadManager`** interface of the [Service Worker API](/en-US/docs/Web/API/Service_Worker_API) provides methods for managing the preloading of resources in parallel with service worker bootup.
 
 If supported, an object of this type is returned by {{domxref("ServiceWorkerRegistration.navigationPreload")}}.
 The result of a preload fetch request is waited on using the promise returned by {{domxref("FetchEvent.preloadResponse")}}.
 
-## Methods
+## Instance methods
 
 - {{domxref("NavigationPreloadManager.enable()")}}
   - : Enables navigation preloading, returning a {{jsxref("Promise")}} that resolves with {{jsxref('undefined')}}.
@@ -28,7 +22,6 @@ The result of a preload fetch request is waited on using the promise returned by
   - : Sets the value of the {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header sent in preloading requests and returns an empty {{jsxref("Promise")}}.
 - {{domxref("NavigationPreloadManager.getState()")}}
   - : Returns a {{jsxref("Promise")}} that resolves to an object with properties that indicate whether preloading is enabled, and what value will be sent in the {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header in preloading requests.
-
 
 ## Description
 
@@ -50,7 +43,7 @@ This might be used, for example, to reduce the data sent to just part of the ori
 
 ## Examples
 
-The examples here are from [Speed up Service Worker with Navigation Preloads](https://developers.google.com/web/updates/2017/02/navigation-preload#the-solution) (developers.google.com).
+The examples here are from [Speed up Service Worker with Navigation Preloads](https://developer.chrome.com/blog/navigation-preload/) (developer.chrome.com).
 
 ### Feature detection and enabling navigation preloading
 
@@ -59,12 +52,12 @@ Below we enable navigation preloading in the service worker's `activate` event h
 ```js
 addEventListener("activate", (event) => {
   event.waitUntil(
-    (async function () {
+    (async () => {
       if (self.registration.navigationPreload) {
         // Enable navigation preloads!
         await self.registration.navigationPreload.enable();
       }
-    })()
+    })(),
   );
 });
 ```
@@ -83,7 +76,7 @@ If there is no matching cache entry or preloaded response, the code starts a new
 ```js
 addEventListener("fetch", (event) => {
   event.respondWith(
-    (async function () {
+    (async () => {
       // Respond from the cache if we can
       const cachedResponse = await caches.match(event.request);
       if (cachedResponse) return cachedResponse;
@@ -94,7 +87,7 @@ addEventListener("fetch", (event) => {
 
       // Else try the network.
       return fetch(event.request);
-    })()
+    })(),
   );
 });
 ```
@@ -114,29 +107,26 @@ The code below shows how to set the value of the header directive to some variab
 
 ```js
 navigator.serviceWorker.ready
-  .then((registration) => {
-    return registration.navigationPreload.setHeaderValue(newValue);
-  })
+  .then((registration) =>
+    registration.navigationPreload.setHeaderValue(newValue),
+  )
   .then(() => {
     console.log("Done!");
   });
 ```
 
-[Speed up Service Worker with Navigation Preloads > Custom responses for preloads](https://developers.google.com/web/updates/2017/02/navigation-preload) provides a more complete example of a site where the response for an article web page is constructed from a cached header and footer, so that only the article content is returned for a prefetch.
-
+[Speed up Service Worker with Navigation Preloads > Custom responses for preloads](https://developer.chrome.com/blog/navigation-preload/) provides a more complete example of a site where the response for an article web page is constructed from a cached header and footer, so that only the article content is returned for a prefetch.
 
 ### Getting the state
 
-You can use {{domxref("NavigationPreloadManager.getState()")}} to check whether navigation preloading is enabled and to determine what directive value is sent with the 
+You can use {{domxref("NavigationPreloadManager.getState()")}} to check whether navigation preloading is enabled and to determine what directive value is sent with the
 {{HTTPHeader("Service-Worker-Navigation-Preload")}} HTTP header for preload requests.
 
 The code below shows how to get the promise that resolves to a `state` object and log the result.
 
 ```js
 navigator.serviceWorker.ready
-  .then((registration) => {
-    return registration.navigationPreload.getState();
-  })
+  .then((registration) => registration.navigationPreload.getState())
   .then((state) => {
     console.log(state.enabled); // boolean
     console.log(state.headerValue); // string
@@ -153,4 +143,4 @@ navigator.serviceWorker.ready
 
 ## See also
 
-- [Speed up Service Worker with Navigation Preloads](https://developers.google.com/web/updates/2017/02/navigation-preload) (developers.google.com)
+- [Speed up Service Worker with Navigation Preloads](https://developer.chrome.com/blog/navigation-preload/) (developer.chrome.com)

@@ -1,12 +1,10 @@
 ---
 title: content_scripts
 slug: Mozilla/Add-ons/WebExtensions/manifest.json/content_scripts
-tags:
-  - Add-ons
-  - Extensions
-  - WebExtensions
+page-type: webextension-manifest-key
 browser-compat: webextensions.manifest.content_scripts
 ---
+
 {{AddonSidebar}}
 
 <table class="fullwidth-table standard-table">
@@ -18,6 +16,10 @@ browser-compat: webextensions.manifest.content_scripts
     <tr>
       <th scope="row">Mandatory</th>
       <td>No</td>
+    </tr>
+    <tr>
+      <th scope="row">Manifest version</th>
+      <td>2 or higher</td>
     </tr>
     <tr>
       <th scope="row">Example</th>
@@ -159,12 +161,12 @@ Details of all the keys you can include are given in the table below.
         <p>
           Files are injected in the order given. This means that, for example,
           if you include jQuery here followed by another content script, like
-          this...
+          this:
         </p>
         <pre class="brush: json">
 "js": ["jquery.js", "my-content-script.js"]</pre
         >
-        <p>...then <code>"my-content-script.js"</code> can use jQuery.</p>
+        <p>Then, <code>"my-content-script.js"</code> can use jQuery.</p>
         <p>
           The files are injected after any files in
           <code><a href="#css">css</a></code
@@ -188,7 +190,7 @@ Details of all the keys you can include are given in the table below.
           the rest of the <code>content_scripts</code> key.
         </p>
         <p>
-          This is especially useful to run scripts in empty iframes , whose URL
+          This is especially useful to run scripts in empty iframes, whose URL
           is <code>"about:blank"</code>. To do this you should also set the
           <code>all_frames</code> key.
         </p>
@@ -277,6 +279,38 @@ Details of all the keys you can include are given in the table below.
           after files in <code><a href="#css">css</a></code
           >.
         </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a id="run_at"><code>world</code></a>
+      </td>
+      <td><code>String</code></td>
+      <td>
+        <p>
+          The JavaScript world the script executes in.
+        </p>
+        <dl>
+          <dt><code>"ISOLATED"</code></dt>
+          <dd>
+            The default <a href="/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts">content scripts</a> execution environment.
+            This environment is isolated from the page's context: while they share the same document, the global scopes and available APIs differ.
+          </dd>
+          <dt><code>"MAIN"</code></dt>
+          <dd>
+            The web page's execution environment.
+            This environment is shared with the web page without isolation.
+            Scripts in this environment don't have any access to the APIs that are only available to content scripts.
+            <div class="notecard warning" id="sect1">
+              <p>
+                <strong>Warning:</strong> Due to the lack of isolation, the web page can detect and interfere with the executed code.
+                Do not use the <code>MAIN</code> world unless it is acceptable for web pages to read, access, or modify the logic or data that flows through the executed code.
+                <code>world</code>, and therefore <code>"MAIN"</code>, is not supported in Firefox (although it is planned, and the work to introduce it is tracked by <a href="https://bugzil.la/1736575" class="external" target="_blank">Bug 1736575</a>). In the meantime, JavaScript code running in the isolated content script sandbox can use the Firefox "Xray vision" feature, as described in <a href="/en-US/docs/Mozilla/Add-ons/WebExtensions/Sharing_objects_with_page_scripts">Share objects with page scripts</a>.
+              </p>
+            </div>
+          </dd>
+        </dl>
+        <p>The default value is <code>"ISOLATED"</code>.</p>
       </td>
     </tr>
   </tbody>

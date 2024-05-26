@@ -1,18 +1,14 @@
 ---
 title: Max
 slug: WebAssembly/Reference/Numeric/Max
-tags:
-  - WebAssembly
-  - wasm
-  - Reference
-  - Numeric
-  - Something
+page-type: webassembly-instruction
 ---
+
 {{WebAssemblySidebar}}
 
 The **`max`** instructions, are used for getting the higher of two numbers.
 
-{{EmbedInteractiveExample("pages/wat/max.html")}}
+{{EmbedInteractiveExample("pages/wat/max.html", "tabbed-taller")}}
 
 ## Syntax
 

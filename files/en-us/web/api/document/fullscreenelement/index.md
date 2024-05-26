@@ -1,19 +1,11 @@
 ---
-title: Document.fullscreenElement
+title: "Document: fullscreenElement property"
+short-title: fullscreenElement
 slug: Web/API/Document/fullscreenElement
-tags:
-  - API
-  - Document
-  - Fullscreen
-  - Fullscreen API
-  - Graphics
-  - Property
-  - Read-only
-  - Reference
-  - fullscreenElement
-  - screen
+page-type: web-api-instance-property
 browser-compat: api.Document.fullscreenElement
 ---
+
 {{ApiRef("Fullscreen API")}}
 
 The
@@ -25,19 +17,13 @@ currently in use.
 Although this property is read-only, it will not throw if it is modified (even in
 strict mode); the setter is a no-operation and it will be ignored.
 
-## Syntax
-
-```js
-document.fullscreenElement
-```
-
-### Return value
+## Value
 
 The {{domxref("Element")}} object that's currently in fullscreen mode; if fullscreen
-mode isn't currently in use by the `document`>, the returned
+mode isn't currently in use by the `document`, the returned
 value is `null`.
 
-## Example
+## Examples
 
 This example presents a function, `isVideoInFullscreen()`, which looks at
 the value returned by `fullscreenElement`; if the document is in fullscreen
@@ -48,7 +34,7 @@ that the video is in fullscreen mode.
 
 ```js
 function isVideoInFullscreen() {
-  if (document.fullscreenElement && document.fullscreenElement.nodeName == 'VIDEO') {
+  if (document.fullscreenElement?.nodeName === "VIDEO") {
     return true;
   }
   return false;
@@ -70,5 +56,5 @@ function isVideoInFullscreen() {
 - {{ domxref("Element.requestFullscreen()") }}
 - {{ domxref("Document.exitFullscreen()") }}
 - {{ cssxref(":fullscreen") }} and {{cssxref("::backdrop")}}
-- The {{HTMLElement("iframe")}} {{ HTMLAttrXRef("allowfullscreen", "iframe") }}
+- The {{HTMLElement("iframe")}} [`allowfullscreen`](/en-US/docs/Web/HTML/Element/iframe#allowfullscreen)
   attribute

@@ -1,31 +1,22 @@
 ---
-title: XRSession.cancelAnimationFrame()
+title: "XRSession: cancelAnimationFrame() method"
+short-title: cancelAnimationFrame()
 slug: Web/API/XRSession/cancelAnimationFrame
-tags:
-  - API
-  - AR
-  - Augmented Reality
-  - Experimental
-  - Method
-  - Reference
-  - VR
-  - Virtual Reality
-  - WebXR
-  - WebXR Device API
-  - XRSession
-  - cancelAnimationFrame()
+page-type: web-api-instance-method
+status:
+  - experimental
 browser-compat: api.XRSession.cancelAnimationFrame
 ---
-{{APIRef("WebXR Device API")}}
+
+{{APIRef("WebXR Device API")}}{{SeeCompatTable}}{{SecureContext_Header}}
 
 The **`cancelAnimationFrame()`** method of
 the {{domxref("XRSession")}} interface cancels an animation frame which was previously
-requested by calling {{DOMxRef("XRSession.requestAnimationFrame",
-    "requestAnimationFrame")}}.
+requested by calling {{DOMxRef("XRSession.requestAnimationFrame", "requestAnimationFrame")}}.
 
 ## Syntax
 
-```js
+```js-nolint
 cancelAnimationFrame(handle)
 ```
 
@@ -38,13 +29,13 @@ cancelAnimationFrame(handle)
 
 ### Return value
 
-None.
+None ({{jsxref("undefined")}}).
 
 ## Usage notes
 
 This function has no effect if the specified `handle` cannot be found.
 
-## Example
+## Examples
 
 In the example below we see code which starts up a WebXR session if immersive VR mode
 is supported. Once started, the session schedules its first frame to be rendered by
@@ -62,8 +53,7 @@ let requestHandle = null;
 let xrSession = null;
 
 if (XR) {
-  XR.isSessionSupported('immersive-vr')
-  .then((isSupported) => {
+  XR.isSessionSupported("immersive-vr").then((isSupported) => {
     if (isSupported) {
       startXR();
     }

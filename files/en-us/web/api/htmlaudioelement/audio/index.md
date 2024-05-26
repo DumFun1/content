@@ -1,18 +1,11 @@
 ---
-title: Audio()
+title: "HTMLAudioElement: Audio() constructor"
+short-title: Audio()
 slug: Web/API/HTMLAudioElement/Audio
-tags:
-  - API
-  - Audio
-  - Constructor
-  - DOM
-  - HTML
-  - HTML DOM
-  - HTMLAudioElement
-  - Reference
-  - sound
+page-type: web-api-constructor
 browser-compat: api.HTMLAudioElement.Audio
 ---
+
 {{APIRef("HTML DOM")}}
 
 The **`Audio()`** constructor creates
@@ -22,24 +15,25 @@ offscreen to manage and play audio.
 
 ## Syntax
 
-```js
-audioObj = new Audio(url);
+```js-nolint
+new Audio()
+new Audio(url)
 ```
 
 ### Parameters
 
 - `url` {{optional_inline}}
-  - : An optional {{domxref("DOMString")}} containing the URL of an audio file to be
+  - : An optional string containing the URL of an audio file to be
     associated with the new audio element.
 
 ### Return value
 
 A new {{domxref("HTMLAudioElement")}} object, configured to be used for playing back
-the audio from the file specified by `url`.The new object's
+the audio from the file specified by `url`. The new object's
 {{domxref("HTMLMediaElement.preload", "preload")}} property is set
 to `auto` and its `src` property is set to the specified URL
 or `null` if no URL is given. If a URL is specified, the browser begins
-to *asynchronously* load the media resource before returning the new object.
+to _asynchronously_ load the media resource before returning the new object.
 
 ## Usage notes
 
@@ -61,14 +55,14 @@ playback to begin:
 - Listen for the {{domxref("HTMLMediaElement.canplay_event", "canplay")}} event. It
   is sent to the `<audio>` element when there's enough audio
   available to begin playback, although interruptions may occur.
-- Listen for the {{domxref("HTMLMediaElement.canplaythrough_event",
-  "canplaythrough")}} event. It is sent when it's estimated that the audio should be
+- Listen for the {{domxref("HTMLMediaElement.canplaythrough_event", "canplaythrough")}} event.
+  It is sent when it's estimated that the audio should be
   able to play to the end without interruption.
 
 The event-based approach is best:
 
 ```js
-myAudioElement.addEventListener("canplaythrough", event => {
+myAudioElement.addEventListener("canplaythrough", (event) => {
   /* the audio is now playable; play it if permissions allow */
   myAudioElement.play();
 });
@@ -80,8 +74,7 @@ If all references to an audio element created using
 the `Audio()` constructor are deleted, the element itself won't be removed
 from memory by the JavaScript runtime's garbage collection mechanism if playback is
 currently underway. Instead, the audio will keep playing and the object will remain in
-memory until playback ends or is paused (such as by calling
-{{domxref("HTMLMediaElement.pause", "pause()")}}). At that time, the object becomes
+memory until playback ends. At that time, the object becomes
 subject to garbage collection.
 
 ## Specifications

@@ -1,19 +1,19 @@
 ---
 title: border-end-end-radius
 slug: Web/CSS/border-end-end-radius
-tags:
-  - CSS
-  - CSS Logical Property
-  - CSS Property
-  - Reference
-  - border-end-end-radius
-  - recipe:css-property
-  - writing modes
+page-type: css-property
 browser-compat: css.properties.border-end-end-radius
 ---
+
 {{CSSRef}}
 
-The **`border-end-end-radius`** [CSS](/en-US/docs/Web/CSS) property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's {{cssxref("writing-mode")}}, {{cssxref("direction")}}, and {{cssxref("text-orientation")}}. This is useful when building styles to work regardless of the [text orientation](/en-US/docs/Web/CSS/text-orientation) and [writing mode](/en-US/docs/Web/CSS/CSS_Writing_Modes).
+The **`border-end-end-radius`** [CSS](/en-US/docs/Web/CSS) property defines a logical border radius on an element, which maps to a physical border radius that depends on the element's {{cssxref("writing-mode")}}, {{cssxref("direction")}}, and {{cssxref("text-orientation")}}. This is useful when building styles to work regardless of the [text orientation](/en-US/docs/Web/CSS/text-orientation) and [writing mode](/en-US/docs/Web/CSS/CSS_writing_modes).
+
+{{EmbedInteractiveExample("pages/css/border-end-end-radius.html")}}
+
+This property affects the corner between the block-end and the inline-end sides of the element. For instance, in a `horizontal-tb` writing mode with `ltr` direction, it corresponds to the {{CSSxRef("border-bottom-right-radius")}} property.
+
+## Syntax
 
 ```css
 /* <length> values */
@@ -28,12 +28,9 @@ border-end-end-radius: 1em 2em;
 border-end-end-radius: inherit;
 border-end-end-radius: initial;
 border-end-end-radius: revert;
+border-end-end-radius: revert-layer;
 border-end-end-radius: unset;
 ```
-
-This property affects the corner between the block-end and the inline-end sides of the element. For instance, in a `horizontal-tb` writing mode with `ltr` direction, it corresponds to the {{CSSxRef("border-bottom-right-radius")}} property.
-
-## Syntax
 
 ### Values
 
@@ -60,7 +57,7 @@ This property affects the corner between the block-end and the inline-end sides 
 </div>
 ```
 
-#### CSS Content
+#### CSS
 
 ```css
 div {
@@ -78,7 +75,7 @@ div {
 }
 ```
 
-#### Results
+#### Result
 
 {{EmbedLiveSample("Border_radius_with_vertical_text", 140, 140)}}
 
@@ -92,5 +89,6 @@ div {
 
 ## See also
 
+- [CSS Logical Properties and Values](/en-US/docs/Web/CSS/CSS_logical_properties_and_values)
 - The mapped physical property: {{CSSxRef("border-bottom-right-radius")}}
 - {{CSSxRef("writing-mode")}}, {{CSSxRef("direction")}}, {{CSSxRef("text-orientation")}}

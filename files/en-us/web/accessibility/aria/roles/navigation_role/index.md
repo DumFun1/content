@@ -1,14 +1,14 @@
 ---
-title: 'ARIA: navigation Role'
+title: "ARIA: navigation role"
 slug: Web/Accessibility/ARIA/Roles/navigation_role
-tags:
-  - ARIA
-  - ARIA Role
-  - Accessibility
-  - Reference
-  - navigation role
-  - landmark role
+page-type: aria-role
+spec-urls:
+  - https://w3c.github.io/aria/#navigation
+  - https://www.w3.org/WAI/ARIA/apg/patterns/landmarks/examples/navigation.html
 ---
+
+{{AccessibilitySidebar}}
+
 The `navigation` role is used to identify major groups of links used for navigating through a website or page content.
 
 ```html
@@ -21,11 +21,11 @@ This is a website's main navigation.
 
 ## Description
 
-The `navigation` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Roles#Landmark_roles) role. Landmark roles provide a way to identify the organization and structure of a web page. By classifying and labeling sections of a page, structural information conveyed visually through layout is represented programmatically. Screen readers use landmark roles to provide keyboard navigation to important sections of a page. Like the HTML {{HTMLElement('nav')}} element, navigation landmarks provide a way to identify groups (e.g. lists) of links that are intended to be used for website or page content navigation. If a page includes more than one navigation landmark, each should have a unique label. If two or more navigational landmark on a page have the same set of links, use the same label for each.
+The `navigation` role is [a landmark](/en-US/docs/Web/Accessibility/ARIA/Roles#3._landmark_roles) role. Landmark roles provide a way to identify the organization and structure of a web page. By classifying and labeling sections of a page, structural information conveyed visually through layout is represented programmatically. Screen readers use landmark roles to provide keyboard navigation to important sections of a page. Like the HTML {{HTMLElement('nav')}} element, navigation landmarks provide a way to identify groups (e.g. lists) of links that are intended to be used for website or page content navigation. If a page includes more than one navigation landmark, each should have a unique label. If two or more navigational landmark on a page have the same set of links, use the same label for each.
 
 It is preferable to use the HTML5 [`<nav>` element](/en-US/docs/Web/HTML/Element/nav) to define a navigation landmark. If the HTML5 nav element technique is not being used, use a `role="navigation"` attribute to define a navigation landmark.
 
-> **Note:** Using the  {{HTMLElement('nav')}} element will automatically communicate a section has a role of `navigation`. Developers should always prefer using the correct semantic HTML element over using ARIA
+> **Note:** Using the {{HTMLElement('nav')}} element will automatically communicate a section has a role of `navigation`. Developers should always prefer using the correct semantic HTML element over using ARIA
 
 ### Associated WAI-ARIA Roles, States, and Properties
 
@@ -57,26 +57,26 @@ None.
 
 ## Accessibility concerns
 
-[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Roles#landmark_roles) are intended to be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
+[Landmark roles](/en-US/docs/Web/Accessibility/ARIA/Roles#3._landmark_roles) are intended to be used sparingly, to identify larger overall sections of the document. Using too many landmark roles can create "noise" in screen readers, making it difficult to understand the overall layout of the page.
 
 ## Best practices
 
 ### Prefer HTML
 
-Using the  {{HTMLElement('nav')}} element will automatically communicate a section has a role of `navigation`. If at all possible, prefer using it instead.
+Using the {{HTMLElement('nav')}} element will automatically communicate a section has a role of `navigation`. If at all possible, prefer using it instead.
 
 ### Labeling landmarks
 
 #### Multiple landmarks
 
-If there is more than one `navigation` landmark role or  {{HTMLElement('nav')}} element in a document, provide a label for each landmark. This label will allow an assistive technology user to be able to quickly understand the purpose of each landmark.
+If there is more than one `navigation` landmark role or {{HTMLElement('nav')}} element in a document, provide a label for each landmark. This label will allow an assistive technology user to be able to quickly understand the purpose of each landmark.
 
 ```html
 <div id="main-nav" role="navigation" aria-label="Main">
   <!-- content -->
 </div>
 
-...
+…
 
 <nav id="footer-nav" aria-label="Footer">
   <!-- content -->
@@ -94,7 +94,7 @@ If a `navigation` landmark role or {{HTMLElement('nav')}} element in a document 
   </nav>
 </header>
 
-...
+…
 
 <footer>
   <nav id="footer-nav" aria-label="Main">
@@ -109,23 +109,12 @@ Screen readers will announce the type of role the landmark is. Because of this, 
 
 ## Specifications
 
-| Specification                                                                                                            | Status                                           |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
-| {{SpecName("ARIA","#navigation","ARIA Navigation Role")}}                                             | {{Spec2('ARIA')}}                         |
-| {{SpecName("ARIA Authoring Practices 1.2","#aria_lh_navigation","Navigation Landmark Role")}} | {{Spec2('ARIA Authoring Practices 1.2')}} |
+{{Specifications}}
 
 ## See also
 
 - The {{HTMLElement('nav')}} element
 - [Using HTML sections and outlines](/en-US/docs/Web/HTML/Element/Heading_Elements)
-- [Using WAI-ARIA Landmarks – 2013 | The Paciello Group](https://developer.paciellogroup.com/blog/2013/02/using-wai-aria-landmarks-2013/)
+- [Using WAI-ARIA Landmarks – 2013 | The Paciello Group](https://www.tpgi.com/using-wai-aria-landmarks-2013/)
 - [Accessible Landmarks | scottohara.me](https://www.scottohara.me/blog/2018/03/03/landmarks.html)
 - [Semantic navigation with the nav element | HTML5 Doctor](https://html5doctor.com/nav-element/)
-
-<section id="Quick_links">
-
-1. [**WAI-ARIA roles**](/en-US/docs/Web/Accessibility/ARIA/Roles)
-
-    {{ListSubpagesForSidebar("/en-US/docs/Web/Accessibility/ARIA/Roles")}}
-
-</section>

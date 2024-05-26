@@ -1,17 +1,14 @@
 ---
 title: Global
 slug: WebAssembly/Reference/Variables/Global
-tags:
-  - WebAssembly
-  - wasm
-  - Reference
-  - Variable
+page-type: webassembly-instruction
 ---
+
 {{WebAssemblySidebar}}
 
 The **`global`** instruction declares a new global variable.
 
-{{EmbedInteractiveExample("pages/wat/global.html")}}
+{{EmbedInteractiveExample("pages/wat/global.html", "tabbed-taller")}}
 
 ## Syntax
 

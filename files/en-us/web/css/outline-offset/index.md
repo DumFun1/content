@@ -1,14 +1,10 @@
 ---
 title: outline-offset
 slug: Web/CSS/outline-offset
-tags:
-  - CSS
-  - CSS Outline
-  - CSS Property
-  - Reference
-  - recipe:css-property
+page-type: css-property
 browser-compat: css.properties.outline-offset
 ---
+
 {{CSSRef}}
 
 The **`outline-offset`** CSS property sets the amount of space between an [outline](/en-US/docs/Web/CSS/outline) and the edge or border of an element.
@@ -26,12 +22,13 @@ outline-offset: 0.2em;
 outline-offset: inherit;
 outline-offset: initial;
 outline-offset: revert;
+outline-offset: revert-layer;
 outline-offset: unset;
 ```
 
 ### Values
 
-- `{{cssxref("&lt;length&gt;")}}`
+- {{cssxref("&lt;length&gt;")}}
   - : The width of the space between the element and its outline. A negative value places the outline inside the element. A value of `0` places the outline so that there is no space between it and the element.
 
 ## Description

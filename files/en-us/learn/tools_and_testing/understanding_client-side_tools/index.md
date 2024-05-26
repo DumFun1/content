@@ -1,36 +1,16 @@
 ---
 title: Understanding client-side web development tools
 slug: Learn/Tools_and_testing/Understanding_client-side_tools
-tags:
-  - Beginner
-  - CSS
-  - Deployment
-  - HTML
-  - JavaScript
-  - Learn
-  - Tools
-  - Transformation
-  - client-side
-  - linting
+page-type: learn-module
 ---
+
 {{LearnSidebar}}
 
 Client-side tooling can be intimidating, but this series of articles aims to illustrate the purpose of some of the most common client-side tool types, explain the tools you can chain together, how to install them using package managers, and control them using the command line. We finish up by providing a complete toolchain example showing you how to get productive.
 
-**[Get started now, with our "Client-side tooling overview"](/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Overview)**
-
 ## Prerequisites
 
 You should really learn the basics of the core [HTML](/en-US/docs/Learn/HTML), [CSS](/en-US/docs/Learn/CSS), and [JavaScript](/en-US/docs/Learn/JavaScript) languages first before attempting to use the tools detailed here.
-
-> **Callout:**
->
-> #### Looking to become a front-end web developer?
->
-> We have put together a course that includes all the essential information you need to
-> work towards your goal.
->
-> [**Get started**](/en-US/docs/Learn/Front-end_web_developer)
 
 ## Guides
 
