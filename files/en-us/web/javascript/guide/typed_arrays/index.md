@@ -57,6 +57,7 @@ Typed array views have self-descriptive names and provide views for all the usua
 | {{jsxref("Uint16Array")}}       | 0 to 65535                            | 2             | `unsigned short`      |
 | {{jsxref("Int32Array")}}        | -2147483648 to 2147483647             | 4             | `long`                |
 | {{jsxref("Uint32Array")}}       | 0 to 4294967295                       | 4             | `unsigned long`       |
+| {{jsxref("Float16Array")}}      | `-65504` to `65504`                   | 2             | N/A                   |
 | {{jsxref("Float32Array")}}      | `-3.4e38` to `3.4e38`                 | 4             | `unrestricted float`  |
 | {{jsxref("Float64Array")}}      | `-1.8e308` to `1.8e308`               | 8             | `unrestricted double` |
 | {{jsxref("BigInt64Array")}}     | -2<sup>63</sup> to 2<sup>63</sup> - 1 | 8             | `bigint`              |
@@ -131,7 +132,7 @@ These are some examples of APIs that make use of typed arrays; there are others,
 - [`FileReader.prototype.readAsArrayBuffer()`](/en-US/docs/Web/API/FileReader/readAsArrayBuffer)
   - : The `FileReader.prototype.readAsArrayBuffer()` method starts reading the contents of the specified [`Blob`](/en-US/docs/Web/API/Blob) or [`File`](/en-US/docs/Web/API/File).
 - [`fetch()`](/en-US/docs/Web/API/fetch)
-  - : The [`body`](/en-US/docs/Web/API/fetch#body) option to `fetch()` can be a typed array or {{jsxref("ArrayBuffer")}}, enabling you to send these objects as the payload of a {{HTTPMethod("POST")}} request.
+  - : The [`body`](/en-US/docs/Web/API/RequestInit#body) option to `fetch()` can be a typed array or {{jsxref("ArrayBuffer")}}, enabling you to send these objects as the payload of a {{HTTPMethod("POST")}} request.
 - [`ImageData.data`](/en-US/docs/Web/API/ImageData)
   - : Is a {{jsxref("Uint8ClampedArray")}} representing a one-dimensional array containing the data in the RGBA order, with integer values between `0` and `255` inclusive.
 
